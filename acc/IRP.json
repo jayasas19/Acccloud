@@ -1,0 +1,55 @@
+IRP
+
+INSERT INTO "STRDBA".apirequest
+(apirequestid, apino, "filter", typename, description, example, required, apimasterid, objectname, isarray)
+VALUES
+((select max(apirequestid) +1 from apirequest), 1, 'companyCode', 'String', 'รหัสบริษัท', 'TESTER01', 'Y', 59, 'productReturnMasterFilter', 'N'),
+((select max(apirequestid) +2 from apirequest), 2, 'documentGroupGroup', 'String', 'รหัสกลุ่มเอกสาร', '00', 'Y', 59, 'productReturnMasterFilter', 'N'),
+((select max(apirequestid) +3 from apirequest), 3, 'divisionCode', 'String', 'รหัสสาขา',  '00', 'Y', 59, 'productReturnMasterFilter', 'N'),
+((select max(apirequestid) +4 from apirequest), 4, 'sectionCode', 'String', 'รหัสแผนก',  '00', 'Y', 59, 'productReturnMasterFilter', 'N'),
+((select max(apirequestid) +5 from apirequest), 5, 'empCode', 'String', 'รหัสพนักงาน', 'ADMIN', 'Y', 59, 'productReturnMasterFilter', 'N'),
+((select max(apirequestid) +6 from apirequest), 6, 'divisionCode', 'String', 'สาขาที่รับ', '00', 'Y', 59, 'productReturnMasterFilter', 'N');
+
+INSERT INTO "STRDBA".apirequest
+(apirequestid, apino, "filter", typename, description, example, required, apimasterid, objectname, isarray)
+VALUES
+((select max(apirequestid) +1 from apirequest), 1, 'prodCode', 'String', 'รหัสสินค้า', '000000002', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +2 from apirequest), 2, 'whCode', 'String', 'รหัสคลัง', '00', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +3 from apirequest), 3, 'prodVat', 'String', 'สินค้าคิดภาษี', 'N', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +4 from apirequest), 4, 'prodPrice', 'Decimal', 'ราคาสินค้า', 0, 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +5 from apirequest), 5, 'unitCode', 'String', 'รหัสหน่วยนับ', '002', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +6 from apirequest), 6, 'prodConvfactor', 'Decimal', 'ตัวคูณ', 1, 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +7 from apirequest), 7, 'prodQty', 'Decimal', 'จำนวนสินค้า', 1, 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +8 from apirequest), 8, 'prodBaseQty', 'Decimal', 'จำนวนสินค้าสุทธิ', 1, 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +9 from apirequest), 9, 'jobCode', 'String', 'รหัสคลัง', '00', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +10 from apirequest), 10, 'companyCode', 'String', 'รหัสบริษัท', 'TESTER01', 'Y', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +11 from apirequest), 11, 'mfgDate', 'String', 'วันที่ผลิต', '2024-05-24', 'N', 59, 'productReturnDetailFilter', 'Y'),
+((select max(apirequestid) +12 from apirequest), 12, 'lotUseQty', 'Decimal', 'จำนวน lot ที่ใช้', 0, 'N', 59, 'productReturnDetailFilter', 'Y');
+[
+  {
+    "productReturnMasterFilter": {
+      "companyCode": "TESTER01",
+      "documentGroupGroup": "00",
+      "divisionCode": "00",
+      "sectionCode": "00",
+      "empCode": "ADMIN",
+      "divisionCode": "00"
+    },
+    "productReturnDetailFilter": [
+      {
+        "prodCode": "000000002",
+        "whCode": "00",
+        "prodVat": "N",
+        "prodPrice": 0,
+        "unitCode": "002",
+        "prodConvfactor": 1,
+        "prodQty": 1,
+        "jobCode": "00",
+        "prodBaseQty": 1,
+        "companyCode": "TESTER01",
+        "mfgDate": "2024-05-24",
+        "lotUseQty": 0
+      }
+    ]
+  }
+]
