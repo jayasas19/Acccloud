@@ -1,0 +1,120 @@
+SRCV
+
+INSERT INTO "STRDBA".apirequest
+(apirequestid, apino, "filter", typename, description, example, required, apimasterid, objectname, isarray)
+VALUES
+((select max(apirequestid) +1 from apirequest), 1, 'rcvServiceInvoiceNo', 'String', 'เลขที่ใบแจ้งหนี้', 'invoiceNo', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +2 from apirequest), 2, 'rcvServiceInvoiceDate', 'String', 'วันที่แจ้งหนี้', '2024-05-09', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +3 from apirequest), 3, 'rcvServiceTotal', 'Decimal', 'จำนวนเงิน', 500, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +4 from apirequest), 4, 'rcvServiceTotalNoVat', 'Decimal', 'จำนวนเงินไม่คิดภาษี', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +5 from apirequest), 5, 'rcvServiceDiscRate', 'Decimal', 'อัตราส่วนลด', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +6 from apirequest), 6, 'rcvServiceDiscAmt', 'Decimal', 'ส่วนลด', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +7 from apirequest), 7, 'rcvServiceDepositNo', 'String', 'เลขที่เอกสารมัดจำ', '', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +8 from apirequest), 8, 'rcvServiceDepositAmt', 'Decimal', 'จำนวนเงินมัดจำ', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +9 from apirequest), 9, 'rcvServiceVatRate', 'Decimal', 'อัตราภาษี', 7, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +10 from apirequest), 10, 'rcvServiceVatAmt', 'Decimal', 'ภาษี', 35, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +11 from apirequest), 11, 'rcvServiceNetAmt', 'Decimal', 'จำนวนเงินสุทธิ', 535, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +12 from apirequest), 12, 'rcvServicePayAmt', 'Decimal', 'จำนวนเงินจ่าย', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +13 from apirequest), 13, 'rcvServiceRemark', 'String', 'หมายเหตุ', '', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +14 from apirequest), 14, 'rcvServiceLinkDocNo', 'String', '', 'N', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +15 from apirequest), 15, 'rcvServiceReferPoNo', 'String', 'เอกสารอ้างอิงใบสั่งซื้อ', '', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +16 from apirequest), 16, 'companyCode', 'String', 'รหัสบริษัท (ตัวพิมพ์ใหญ่)', 'TESTER01', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +17 from apirequest), 17, 'exchangeRate', 'Decimal', 'อัตราแลกเปลี่ยน', 1, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +18 from apirequest), 18, 'paymentAmt', 'Decimal', 'จำนวนเงินจ่าย', 0, 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +19 from apirequest), 19, 'vatInclude', 'String', 'ภาษีรวมอยู่ในมูลค่า', 'N', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +20 from apirequest), 20, 'divisionNo', 'String', 'สาขาของผู้จำหน่าย', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +21 from apirequest), 21, 'taxIdNo', 'String', 'หมายเลขประจำตัวผู้เสียภาษี', '0133562000382', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +22 from apirequest), 22, 'currencyCode', 'String', 'รหัสสกุลเงิน', 'THB', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +23 from apirequest), 23, 'documentGroupGroup', 'String', 'รหัสกลุ่มเอกสาร', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +24 from apirequest), 24, 'suppCode', 'String', 'รหัสผู้จำหน่าย', '000', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +25 from apirequest), 25, 'empCode', 'String', 'รหัสพนักงาน', 'ADMIN', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +26 from apirequest), 26, 'divisionCode', 'String', 'รหัสสาขา', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +27 from apirequest), 27, 'sectionCode', 'String', 'รหัสแผนก', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +28 from apirequest), 28, 'createByEmpCode', 'String', 'รหัสผู้สร้างเอกสาร', 'ADMIN', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +29 from apirequest), 29, 'suppDivisionNo', 'String', 'สาขาของผู้จำหน่าย', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +30 from apirequest), 30, 'jobCode', 'String', 'รหัสงาน', '00', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +31 from apirequest), 31, 'rcvServiceDateRequire', 'String', '', '2024-07-04', 'Y', 53, 'rcvServiceMasterFilter', 'N'),
+((select max(apirequestid) +32 from apirequest), 32, 'rcvServiceTotalBeforeVat', 'String', 'จำนวนเงินก่อนคิดภาษี', 500, 'Y', 53, 'rcvServiceMasterFilter', 'N');
+
+
+INSERT INTO "STRDBA".apirequest
+(apirequestid, apino, "filter", typename, description, example, required, apimasterid, objectname, isarray)
+VALUES
+((select max(apirequestid) +1 from apirequest), 1, 'serviceCode', 'String', 'รหัสบริการ', '000000', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +2 from apirequest), 2, 'serviceVat', 'String', 'บริการคิดภาษี', 'Y', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +3 from apirequest), 3, 'serviceQTY', 'Decimal', 'จำนวนบริการ', 1, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +4 from apirequest), 4, 'servicePrice', 'Decimal', 'ราคาบริการ', 500, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +5 from apirequest), 5, 'serviceBillingQTY', 'Decimal', 'จำนวนบริการจากใบวางบิล', 0, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +6 from apirequest), 6, 'serviceDiscRate0', 'String', 'อัตราส่วนลด %', '0%', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +7 from apirequest), 7, 'serviceDiscAmt', 'Decimal', 'ส่วนลด', 0, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +8 from apirequest), 8, 'serviceNetPrice', 'Decimal', 'ราคาสุทธิ', 500, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +9 from apirequest), 9, 'serviceTotalNetPrice', 'Decimal', 'ราคาสุทธิ', 500, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +10 from apirequest), 10, 'serviceCn', 'String', '', 0, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +11 from apirequest), 11, 'serviceDiscRate', 'Decimal', 'อัตราส่วนลด', 0, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +12 from apirequest), 12, 'poDocIndex', 'String', 'เลขที่แถวของใบสั่งซื้อ', 0, 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +13 from apirequest), 13, 'companyCode', 'String', 'รหัสบริษัท', 'TESTER01', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +14 from apirequest), 14, 'rcvServiceItemDetail', 'String', '', '', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +15 from apirequest), 15, 'serviceReceiveDate', 'String', 'วันที่รับ', '2024-07-04', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +16 from apirequest), 16, 'divisionCode', 'String', 'รหัสสาขา', '00', 'Y', 53, 'rcvServiceDetailFilter', 'Y'),
+((select max(apirequestid) +17 from apirequest), 17, 'sectionCode', 'String', 'รหัสแผนก', '00', 'Y', 53, 'rcvServiceDetailFilter', 'Y');
+
+
+[
+  {
+    "rcvServiceMasterFilter": {
+      "rcvServiceInvoiceNo": "invoiceNo",
+      "rcvServiceInvoiceDate": "2024-05-09",
+      "rcvServiceTotal": 500,
+      "rcvServiceTotalNoVat": 0,
+      "rcvServiceDiscRate": 0,
+      "rcvServiceDiscAmt": 0,
+      "rcvServiceDepositNo": "",
+      "rcvServiceDepositAmt": 0,
+      "rcvServiceVatRate": 7,
+      "rcvServiceVatAmt": 35,
+      "rcvServiceNetAmt": 535,
+      "rcvServicePayAmt": 0,
+      "rcvServiceRemark": "",
+      "rcvServiceLinkDocNo": "N",
+      "rcvServiceReferPoNo": "",
+      "companyCode": "TESTER01",
+      "exchangeRate": 1,
+      "paymentAmt": 0,
+      "vatInclude": "N",
+      "divisionNo": "00",
+      "taxIdNo": "0133562000382",
+      "currencyCode": "THB",
+      "documentGroupGroup": "00",
+      "suppCode": "000",
+      "empCode": "ADMIN",
+      "divisionCode": "00",
+      "sectionCode": "00",
+      "createByEmpCode": "ADMIN",
+      "suppDivisionNo": "00",
+      "jobCode": "00",
+      "rcvServiceDateRequire": "2024-07-04",
+      "rcvServiceTotalBeforeVat": 500
+    },
+    "rcvServiceDetailFilter": [
+      {
+        "serviceCode": "000000",
+        "serviceVat": "Y",
+        "serviceQTY": 1,
+        "servicePrice": 500,
+        "serviceBillingQTY": 0,
+        "serviceDiscRate0": "0%",
+        "serviceDiscAmt": 0,
+        "serviceNetPrice": 500,
+        "serviceTotalNetPrice": 500,
+        "serviceCn": 0,
+        "serviceDiscRate": 0,
+        "poDocIndex": 0,
+        "companyCode": "TESTER01",
+        "rcvServiceItemDetail": "",
+        "serviceReceiveDate": "2024-07-04",
+        "divisionCode": "00",
+        "sectionCode": "00"
+      }
+    ]
+  }
+]
